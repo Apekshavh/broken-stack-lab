@@ -22,6 +22,7 @@ DB_CONFIG = {
 cache = redis.Redis(
     host=os.getenv("REDIS_HOST", "redis"),
     port=int(os.getenv("REDIS_PORT", "6379")),
+    password=os.getenv("REDIS_PASSWORD") or NONE,
     socket_timeout=2,
     socket_connect_timeout=2,
     decode_responses=True,
